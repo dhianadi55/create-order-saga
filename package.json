@@ -1,0 +1,22 @@
+{
+  "name": "create-order-saga",
+  "version": "1.0.0",
+  "description": "Create Order Saga system implementing distributed transaction with compensation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:orchestrator": "node saga-orchestrator/index.js",
+    "start:order": "node order-service/index.js",
+    "start:payment": "node payment-service/index.js",
+    "start:shipping": "node shipping-service/index.js",
+    "start:all": "concurrently \"npm run start:orchestrator\" \"npm run start:order\" \"npm run start:payment\" \"npm run start:shipping\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "concurrently": "^9.1.2",
+    "express": "^5.1.0"
+  }
+}
